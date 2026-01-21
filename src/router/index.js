@@ -101,6 +101,11 @@ const routes = [
     name: 'BlogDetail',
     component: () => import('../views/BlogDetail.vue')
   },
+  {
+    path: '/staff',
+    name: 'Staff',
+    component: () => import('../views/Staff.vue')
+  },
   // ============ ADMIN ROUTES ============
   {
     path: '/admin',
@@ -141,6 +146,11 @@ const routes = [
         path: 'blog',
         name: 'AdminBlog',
         component: () => import('../views/admin/Blog.vue')
+      },
+      {
+        path: 'support',
+        name: 'AdminSupport',
+        component: () => import('../views/admin/Support.vue')
       },
       {
         path: 'settings',

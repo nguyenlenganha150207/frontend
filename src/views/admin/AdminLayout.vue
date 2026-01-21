@@ -41,6 +41,10 @@
           <i class="fas fa-blog"></i>
           <span v-if="!sidebarCollapsed">Blog</span>
         </router-link>
+        <router-link to="/admin/support" class="nav-item" active-class="active">
+          <i class="fas fa-headset"></i>
+          <span v-if="!sidebarCollapsed">Hỗ trợ KH</span>
+        </router-link>
         <router-link to="/admin/settings" class="nav-item" active-class="active">
           <i class="fas fa-cog"></i>
           <span v-if="!sidebarCollapsed">Cài đặt</span>

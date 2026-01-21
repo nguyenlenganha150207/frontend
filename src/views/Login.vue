@@ -31,7 +31,7 @@
                 type="email" 
                 v-model="form.email" 
                 class="form-input"
-                placeholder="your@email.com"
+                placeholder="Vui lòng nhập email"
                 required
               />
             </div>

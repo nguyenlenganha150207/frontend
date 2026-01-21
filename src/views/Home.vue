@@ -395,8 +395,9 @@ onMounted(async () => {
   right: 0;
   bottom: 0;
   background: 
-    radial-gradient(ellipse at 30% 20%, rgba(107, 33, 168, 0.3) 0%, transparent 50%),
-    radial-gradient(ellipse at 70% 80%, rgba(220, 38, 38, 0.2) 0%, transparent 50%);
+    radial-gradient(ellipse at 20% 30%, rgba(107, 33, 168, 0.35) 0%, transparent 50%),
+    radial-gradient(ellipse at 80% 70%, rgba(219, 39, 119, 0.25) 0%, transparent 50%),
+    radial-gradient(ellipse at 50% 50%, rgba(147, 51, 234, 0.1) 0%, transparent 70%);
 }
 
 .floating-elements {

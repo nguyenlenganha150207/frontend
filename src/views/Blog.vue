@@ -338,7 +338,7 @@ onMounted(() => {
 
 /* Hero Section */
 .blog-hero {
-  background: linear-gradient(135deg, #1a1a1a 0%, #0f0f12 100%);
+  background: linear-gradient(135deg, #1e0a3c 0%, #2d1654 30%, #4c1d6e 60%, #7c3aad 100%);
   padding: 80px 0;
   text-align: center;
   position: relative;
@@ -352,8 +352,11 @@ onMounted(() => {
   left: 0;
   right: 0;
   bottom: 0;
-  background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><circle cx="20" cy="20" r="2" fill="rgba(168,85,247,0.1)"/><circle cx="80" cy="40" r="1" fill="rgba(168,85,247,0.1)"/><circle cx="60" cy="80" r="1.5" fill="rgba(168,85,247,0.1)"/></svg>');
-  opacity: 0.5;
+  background: 
+    radial-gradient(ellipse at 30% 20%, rgba(219, 39, 119, 0.3) 0%, transparent 50%),
+    radial-gradient(ellipse at 70% 80%, rgba(139, 92, 246, 0.25) 0%, transparent 50%),
+    url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><circle cx="20" cy="20" r="1" fill="rgba(255,255,255,0.3)"/><circle cx="80" cy="40" r="0.5" fill="rgba(255,255,255,0.4)"/><circle cx="60" cy="80" r="0.8" fill="rgba(255,255,255,0.2)"/><circle cx="40" cy="60" r="0.6" fill="rgba(255,255,255,0.35)"/></svg>');
+  opacity: 0.8;
 }
 
 .hero-content h1 {
@@ -394,8 +397,21 @@ onMounted(() => {
 /* Controls */
 .blog-controls {
   padding: 40px 0;
-  background: #0f0f12;
-  border-bottom: 1px solid #2d2d2d;
+  background: linear-gradient(180deg, #1e1145 0%, #2a1856 50%, #1a1040 100%);
+  border-bottom: 1px solid rgba(168, 85, 247, 0.2);
+  position: relative;
+}
+
+.blog-controls::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: 
+    radial-gradient(ellipse at 50% 0%, rgba(168, 85, 247, 0.15) 0%, transparent 60%);
+  pointer-events: none;
 }
 
 .container {
@@ -413,16 +429,19 @@ onMounted(() => {
 .search-bar input {
   width: 100%;
   padding: 15px 50px 15px 20px;
-  background: #1a1a1a;
-  border: 1px solid #2d2d2d;
+  background: rgba(30, 17, 69, 0.8);
+  border: 1px solid rgba(168, 85, 247, 0.35);
   border-radius: 25px;
   color: white;
   font-size: 1rem;
+  backdrop-filter: blur(10px);
 }
 
 .search-bar input:focus {
   outline: none;
   border-color: #a855f7;
+  background: rgba(30, 30, 45, 0.9);
+  box-shadow: 0 0 15px rgba(168, 85, 247, 0.2);
 }
 
 .search-bar i {
@@ -430,7 +449,7 @@ onMounted(() => {
   right: 20px;
   top: 50%;
   transform: translateY(-50%);
-  color: #666;
+  color: #888;
 }
 
 .filter-buttons {
@@ -442,19 +461,22 @@ onMounted(() => {
 
 .filter-btn {
   padding: 10px 20px;
-  background: #1a1a1a;
-  border: 1px solid #2d2d2d;
+  background: rgba(30, 17, 69, 0.9);
+  border: 1px solid rgba(168, 85, 247, 0.25);
   border-radius: 20px;
-  color: #ccc;
+  color: #d4b5fd;
   cursor: pointer;
   transition: all 0.3s ease;
+  backdrop-filter: blur(5px);
 }
 
 .filter-btn:hover,
 .filter-btn.active {
-  background: #a855f7;
+  background: linear-gradient(135deg, #9333ea, #c026d3);
   color: white;
-  border-color: #a855f7;
+  border-color: transparent;
+  box-shadow: 0 5px 20px rgba(147, 51, 234, 0.4);
+  transform: translateY(-2px);
 }
 
 /* Articles */
@@ -470,8 +492,8 @@ onMounted(() => {
 }
 
 .article-card {
-  background: linear-gradient(145deg, #1a1a1a 0%, #0f0f12 100%);
-  border: 1px solid #2d2d2d;
+  background: linear-gradient(145deg, #2d1b4e 0%, #1a1035 100%);
+  border: 1px solid rgba(168, 85, 247, 0.15);
   border-radius: 16px;
   overflow: hidden;
   cursor: pointer;
@@ -479,9 +501,9 @@ onMounted(() => {
 }
 
 .article-card:hover {
-  transform: translateY(-5px);
+  transform: translateY(-8px);
   border-color: #a855f7;
-  box-shadow: 0 10px 30px rgba(168, 85, 247, 0.2);
+  box-shadow: 0 15px 40px rgba(147, 51, 234, 0.35);
 }
 
 .article-image {
@@ -589,19 +611,20 @@ onMounted(() => {
 
 .page-btn {
   padding: 10px 15px;
-  background: #1a1a1a;
-  border: 1px solid #2d2d2d;
+  background: rgba(76, 29, 110, 0.4);
+  border: 1px solid rgba(168, 85, 247, 0.3);
   border-radius: 8px;
-  color: #ccc;
+  color: #e9d5ff;
   cursor: pointer;
   transition: all 0.3s ease;
 }
 
 .page-btn:hover:not(:disabled),
 .page-btn.active {
-  background: #a855f7;
+  background: linear-gradient(135deg, #9333ea, #7c3aed);
   color: white;
-  border-color: #a855f7;
+  border-color: transparent;
+  box-shadow: 0 5px 15px rgba(147, 51, 234, 0.4);
 }
 
 .page-btn:disabled {
@@ -611,19 +634,38 @@ onMounted(() => {
 
 /* Newsletter */
 .newsletter-section {
-  background: linear-gradient(135deg, #0f0f12 0%, #1a1a1a 100%);
+  background: linear-gradient(135deg, rgba(30, 10, 60, 0.8) 0%, rgba(76, 29, 110, 0.6) 50%, rgba(124, 58, 173, 0.4) 100%);
   padding: 80px 0;
   text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.newsletter-section::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: radial-gradient(ellipse at 50% 50%, rgba(219, 39, 119, 0.15) 0%, transparent 60%);
+  pointer-events: none;
+}
+
+.newsletter-content {
+  position: relative;
+  z-index: 1;
 }
 
 .newsletter-content h2 {
   color: white;
   font-size: 2rem;
   margin-bottom: 15px;
+  text-shadow: 0 2px 10px rgba(147, 51, 234, 0.3);
 }
 
 .newsletter-content p {
-  color: #ccc;
+  color: #e9d5ff;
   margin-bottom: 30px;
 }
 
@@ -637,30 +679,33 @@ onMounted(() => {
 .newsletter-form input {
   flex: 1;
   padding: 15px 20px;
-  background: #1a1a1a;
-  border: 1px solid #2d2d2d;
+  background: rgba(76, 29, 110, 0.5);
+  border: 1px solid rgba(168, 85, 247, 0.3);
   border-radius: 25px;
   color: white;
+  backdrop-filter: blur(10px);
 }
 
 .newsletter-form input:focus {
   outline: none;
-  border-color: #a855f7;
+  border-color: #c084fc;
+  box-shadow: 0 0 20px rgba(168, 85, 247, 0.3);
 }
 
 .btn-primary {
-  background: linear-gradient(135deg, #a855f7, #8b5cf6);
+  background: linear-gradient(135deg, #9333ea, #db2777);
   border: none;
   padding: 15px 30px;
   border-radius: 25px;
   color: white;
   cursor: pointer;
   transition: all 0.3s ease;
+  font-weight: 600;
 }
 
 .btn-primary:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 5px 15px rgba(168, 85, 247, 0.4);
+  transform: translateY(-3px);
+  box-shadow: 0 8px 25px rgba(147, 51, 234, 0.5), 0 0 30px rgba(219, 39, 119, 0.3);
 }
 
 /* Responsive */

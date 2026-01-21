@@ -4,7 +4,7 @@
       <div class="navbar-content">
         <!-- Logo -->
         <router-link to="/" class="logo">
-          <span class="logo-icon">🎃</span>
+          <img src="/Logo.jpg" alt="Pet Store Logo" class="logo-img" />
           <span class="logo-text">
             <span class="spooky-title">Spooky</span>
             <span>Pet Store</span>
@@ -31,6 +31,9 @@
           <router-link to="/contact" class="nav-link" @click="closeMobileMenu">
             <i class="fas fa-envelope"></i> Liên Hệ
           </router-link>
+          <router-link to="/staff" class="nav-link" @click="closeMobileMenu">
+            <i class="fas fa-users"></i> Nhân Viên
+          </router-link>
         </nav>
 
         <!-- Right Section -->
@@ -47,6 +50,11 @@
               <i class="fas fa-search"></i>
             </button>
           </div>
+
+          <!-- Wishlist - Visible for all users -->
+          <router-link to="/wishlist" class="wishlist-btn" title="Danh sách yêu thích">
+            <i class="fas fa-heart"></i>
+          </router-link>
 
           <!-- Cart -->
           <router-link to="/cart" class="cart-btn">
@@ -191,8 +199,10 @@ onUnmounted(() => {
   color: white;
 }
 
-.logo-icon {
-  font-size: 2.5rem;
+.logo-img {
+  width: 50px;
+  height: 50px;
+  object-fit: contain;
   animation: float 3s ease-in-out infinite;
 }
 
@@ -313,6 +323,19 @@ onUnmounted(() => {
 
 .cart-btn:hover {
   color: #a855f7;
+  transform: scale(1.1);
+}
+
+.wishlist-btn {
+  position: relative;
+  color: white;
+  font-size: 1.3rem;
+  text-decoration: none;
+  transition: all 0.3s ease;
+}
+
+.wishlist-btn:hover {
+  color: #ff6b9d;
   transform: scale(1.1);
 }
 

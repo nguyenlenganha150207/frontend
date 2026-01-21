@@ -10,6 +10,8 @@ export const useAuthStore = defineStore('auth', () => {
 
   const isAuthenticated = computed(() => !!token.value)
   const isAdmin = computed(() => user.value?.role === 'ADMIN')
+  const isStaff = computed(() => user.value?.role === 'STAFF')
+  const isCustomer = computed(() => user.value?.role === 'CUSTOMER' || (isAuthenticated.value && !isAdmin.value && !isStaff.value))
 
   // Đăng nhập thông thường bằng email/password
   async function login(credentials) {
@@ -77,6 +79,8 @@ export const useAuthStore = defineStore('auth', () => {
     error,
     isAuthenticated,
     isAdmin,
+    isStaff,
+    isCustomer,
     login,
     register,
     handleGoogleCallback,
